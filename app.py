@@ -131,7 +131,6 @@ def save_qualifying_loans(qualifying_loans):
     save_csv(csv_path, qualifying_loans)
 
 
-
 def save_csv(csv_path, qualifying_loans):
     """Saves the qualifying loans to a CSV file.
     Args:
