@@ -1,0 +1,50 @@
+  477  ls
+  478  cd Challenges/
+  479  ls
+  480  git clone git@github.com:nabelou10/loan_qualifier.git
+  481  ls
+  482  git add .
+  483  cd loan_qualifier/
+  484  git add .
+  485  git commit -m "Added source files"
+  486  git push
+  487  ls
+  488  python app.py
+  489  python app.py
+  490  adb connect 
+  491  adb connect 192.168.8.158:5555
+  492  cd Downloads/
+  493  cd android_bot/quesaco/
+  494  python3 start.py --interact @sciencechannel-followers @discovery-followers --interactions-count 20-40 --likes-count 0-1 --follow-percentage 80 --repeat 160-220
+  495  python3 start.py --interact @sciencechannel-followers @discovery-followers --interactions-count 20-40 --likes-count 0-1 --follow-percentage 80 --total-story-limit 40-60 --repeat 160-220
+  496  python3 start.py --interact @wwatrading-followers forex-recent-likers --interactions-count 20-40 --likes-count 0-1 --follow-percentage 80 --repeat 160-220 
+  497  python3 start.py --interact @wwatrading-followers forex-recent-likers --interactions-count 20-40 --likes-count 0-1 --follow-percentage 80 --repeat 160-220 
+  498  python3 start.py --interact @wwatrading-followers forex-recent-likers --interactions-count 20-40 --likes-count 0-1 --follow-percentage 80 --repeat 160-220 
+  499  python3 start.py --interact @wwatrading-followers forex-recent-likers --interactions-count 20-40 --likes-count 0-1 --follow-percentage 80 --repeat 160-220 --warmup-time-before-session 3-8
+  500  python3 start.py --interact @wwatrading-followers forex-recent-likers --interactions-count 20-40 --likes-count 0-1 --follow-percentage 80 --repeat 160-220 
+  501  cd Desktop/rice
+  502  ls
+  503  cd Challenges/
+  504  ls
+  505  cd loan_qualifier/
+  506  ls
+  507  python app.py
+  508  python app.py
+  509  python app.py
+  510  python app.py
+  511  python app.py
+  512  python app.py
+  513  python app.py
+  514  python app.py
+  515  python app.py
+  516  python app.py
+  517  python app.py
+  518  python app.py
+  519  python app.py
+  520  python app.py
+  521  python app.py
+  522  python app.py
+  523  python app.py
+  524  python app.py
+  525  python app.py
+  526  history 50 > terminal_history.txt

@@ -8,8 +8,10 @@ Example:
 """
 import sys
 import fire
+import csv
 import questionary
 from pathlib import Path
+from csv import writer
 
 from qualifier.utils.fileio import load_csv
 
@@ -103,13 +105,46 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
 
 def save_qualifying_loans(qualifying_loans):
-    """Saves the qualifying loans to a CSV file.
+    """Check if user want to save loans found to csv, calls save_csv function
 
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
+    wannasave = questionary.text("Do you want to save the qualifying loans in an external file? Y/N").ask()
+    if wannasave in ("n", "no", "N", "NO"):
+        sys.exit()
+
+    if len(qualifying_loans) == 0:
+        print('Cannot save because no qualifying loan was found')
+        sys.exit()
+
+    csv_path = "data/loans_found.csv"
+
+    other_path = questionary.text("Default csv path is data/loans_found.csv, do you want to use another file path? Y/N").ask()
+
+    if other_path not in ("n", "no", "N", "NO"):
+        csv_path = questionary.text("Enter your file path").ask()
+        csv_path = Path(csv_path)
+        if not csv_path.exists():
+            sys.exit(f"Oops! Can't find this path: {csv_path}")
+
+    save_csv(csv_path, qualifying_loans)
+
+
+
+def save_csv(csv_path, qualifying_loans):
+    """Saves the qualifying loans to a CSV file.
+    Args:
+        csv_path (string): Path of the csv file.
+        qualifying_loans (list of lists): The qualifying bank loans.
+    """
+    header = ["Lender","Max Loan Amount","Max LTV","Max DTI","Min Credit Score",'Interest Rate']
+    print("The qualifying loans have been successfully saved")
+    with open(csv_path, "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(header)
+        writer.writerows(qualifying_loans)
+        csvfile.close()
 
 
 def run():
